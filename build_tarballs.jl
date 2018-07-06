@@ -9,7 +9,7 @@ sources = [
 # Bash recipe for building across all platforms
 script = raw"""
 cd $WORKSPACE/srcdir/cubature
-gcc -shared -fPIC -O3 hcubature.c pcubature.c -o $libdir/libcubature.$dlext
+${CC} ${LDFLAGS} -shared -fPIC -O3 hcubature.c pcubature.c -o ${libdir}/libcubature.${dlext}
 """
 
 # These are the platforms we will build for by default, unless further
