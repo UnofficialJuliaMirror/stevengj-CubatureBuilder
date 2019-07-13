@@ -27,4 +27,4 @@ dependencies = [
 ]
 
 # Build the tarballs, and possibly a `build.jl` as well.
-build_tarballs(ARGS, "Cubature", "v1.0.3", sources, script, platforms, products, dependencies)
+build_tarballs(ARGS, "Cubature", v"1.0.3", sources, script, platforms, products, dependencies)
