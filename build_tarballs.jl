@@ -9,7 +9,8 @@ sources = [
 # Bash recipe for building across all platforms
 script = raw"""
 cd $WORKSPACE/srcdir/cubature
-${CC} ${LDFLAGS} -shared -fPIC -O3 hcubature.c pcubature.c -o ${libdir}/libcubature.${dlext}
+mkdir -p ${prefix}/lib
+${CC} ${LDFLAGS} -shared -fPIC -O3 hcubature.c pcubature.c -o ${prefix}/lib/libcubature.${dlext}
 """
 
 # These are the platforms we will build for by default, unless further
@@ -26,4 +27,4 @@ dependencies = [
 ]
 
 # Build the tarballs, and possibly a `build.jl` as well.
-build_tarballs(ARGS, "Cubature", sources, script, platforms, products, dependencies)
+build_tarballs(ARGS, "Cubature", "v1.0.3", sources, script, platforms, products, dependencies)
